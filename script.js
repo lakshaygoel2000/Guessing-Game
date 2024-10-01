@@ -30,17 +30,18 @@ guessSubmit.addEventListener('click', () =>{
 
         else{
             if(userGuess > rand_num){
-                lowOrHi.textContent = 'Guess Number is too high';
+                lowOrHi.textContent = 'Guess Number is too high, Try again';
         
             }
             else if(userGuess < rand_num){
-                lowOrHi.textContent = 'Guess Number is too Low';
+                lowOrHi.textContent = 'Guess Number is too Low, Try again';
             }
             lastResult.textContent = 'Wrong!';
             lastResult.style.backgroundColor = 'red';
     
         }
         guessCount++;
+        guessField.value ='';
         guessField.focus();
     // }
 });
