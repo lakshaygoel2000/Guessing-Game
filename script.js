@@ -16,14 +16,22 @@ guessSubmit.addEventListener('click', () =>{
   
           guess.textContent = `${guess.textContent} ${userGuess}`;
         if(userGuess === rand_num){
-            lastResult.textContent = 'Congratulations , you won!';
+            lastResult.innerHTML= `
+            Congratulations , you won!<br>
+            Right guess is ${userGuess}.<br>
+            Took you ${guessCount} guesses.
+            
+            `;
             lastResult.style.backgroundColor = 'green';
             lowOrHi.textContent = '';
             setGameOver();
         }
 
         else if(guessCount === 10){
-            lastResult.textContent = 'Game Over, you lost!';
+            lastResult.innerHTML = `
+            Game Over, you lost!<br>
+            Right guess is ${rand_num}.
+            `;
             lowOrHi.textContent = '';
             setGameOver();
         }
